@@ -4,7 +4,6 @@ import { User } from "../models/user.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const options = { httpOnly: true, secure: true };
-let hello;
 
 const genrateAccessAndRefreshTokens = async (userId) => {
   try {
