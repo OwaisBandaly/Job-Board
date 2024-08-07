@@ -11,4 +11,16 @@ export const isEmployer = asyncHandler(async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
+})
+
+export const isJobSeeker = asyncHandler(async (req, res, next) => {
+  try {
+    if (req.user.role === "jobSeeker") {
+      return next();
+    } else {
+      return res.status(403).json({ message: "Access Denied, jobSeeker only!" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
